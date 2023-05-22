@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.create-activity {
+    width: 80%;
+    margin: 30px;
+    padding: 30px;
+    border-radius: 6px;
+    background-color: white;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.create-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    gap: 15px;
+}
+
+
+.create-form label {
+    font-weight: 500;
+}
+
+.create-form input {
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid #fac031;
+    padding-left: 8px;
+}
+
+.create-btn {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.create-btn button{
+    margin-left: 16px;
+}
+
+.create-save-btn {
+    margin-left: 8px;
+    padding: 0;
+    width: 130px;
+    height: 40px;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 6px 6px 12px #c5c5c5, -6px -6px -12px #ffffff;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: black;
+    border: 2px solid #FAC031;
+    font-weight: 500;
+}
+
+.create-save-btn::before {
+    content: '';
+    width: 0;
+    height: 3em;
+    border-radius: 4px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(90deg, rgb(230, 202, 99) 0%, rgb(239, 202, 107) 41%, rgba(255,218,0,1) 100%);;
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+    color: white;
+}
+
+.create-save-btn:hover::before {
+    width: 9em;
+    color: white;
+}

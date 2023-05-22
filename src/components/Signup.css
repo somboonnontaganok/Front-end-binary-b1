@@ -1,0 +1,8 @@
+
+.backgroundLayer {
+    background-image: url('../assets/img/fitness-trainer-video-blogger-doing-stretching-man-is-filming-himself-smartphone-camera-home.jpg');
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    width: 100%
+}
