@@ -1,8 +1,6 @@
 import axios from "axios";
 
-const PORT = 8080;
-const HOSTNAME = "http://127.0.0.1";
-const SERVER = `${HOSTNAME}:${PORT}`;
+const SERVER = "https://back-end-binary-b1.onrender.com";
 
 export const getActivities = async () => {
   // code down below
