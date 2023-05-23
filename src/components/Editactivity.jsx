@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Layout from "../components/Layout";
 import { getActivities, createActivities } from "../api/activityApi";
 import { useParams } from "react-router-dom";
-import axios from 'axios';
+// import axios from 'axios';
 
 function Editactivity() {
   const { activityId } = useParams();
@@ -136,7 +136,7 @@ function Editactivity() {
                 <td>{activity.description}</td>
                 <td>{activity.activity_start_time}</td>
                 <td>{activity.activity_finish_time}</td>
-                <td>{activity.type}</td>
+                <td>{activity.activity_type}</td>
                 <td>{activity.distance}</td>
               </tr>
             );
