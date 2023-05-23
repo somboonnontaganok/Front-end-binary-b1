@@ -64,7 +64,7 @@ function CreateActivity() {
         />
         <label>Date</label>
         <input
-          type="text"
+          type="date"
           placeholder="Date"
           onChange={(e) => setDate(e.target.value)}
         />
