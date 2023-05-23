@@ -115,9 +115,14 @@ section .txt_field {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, .3);
 }
 
-input[type=checkbox] {
+/* input[type=checkbox] {
     accent-color: #fac031;
     mix-blend-mode: multiply;
+} */
+
+.sign-up {
+    text-align: center;
+    margin-top: 28px;
 }
 /* hr {
     width:70%;

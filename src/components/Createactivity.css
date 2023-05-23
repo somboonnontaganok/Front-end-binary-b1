@@ -27,7 +27,8 @@
     font-weight: 500;
 }
 
-.create-form input {
+.create-form input,
+.create-form select {
     border-radius: 10px;
     outline: none;
     border: 1px solid #fac031;

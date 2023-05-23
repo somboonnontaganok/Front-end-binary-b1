@@ -16,13 +16,11 @@ function Login() {
 const [inputFields, setInputFields] = useState({
         email:'',
         password:'',
-        term:false
       });
 
 const handleChange = (e) => {
   const { target } = e;
   const { name } = target;
-  const value = name === 'term' ? target.checked : target.value;
   setInputFields({
     ...inputFields,
     [name]: value
@@ -50,13 +48,16 @@ const onSubmit = (e) => {
               <h4><span style={{color:'orange'}}>Pass</span>word</h4>
               <input className="input-password" type="password" name="password" onChange={handleChange}/>
             </div>
-            <div className="remember-me">
+            {/* <div className="remember-me">
               <input className="input-remember-me" type="checkbox" name="term" onChange={handleChange} />
               <p>I agree to the terms & conditions</p>
-            </div>
+            </div> */}
             <div className="btn">
-              <button className="register" onClick={ onSubmit } >Register</button>
+              <button className="register" >Cancel</button>
               <button className="login" onClick={ onSubmit } >Login</button>
+            </div>
+            <div className="sign-up">
+              <p>Don't have an account? <a href=''>Sign up here</a></p>
             </div>
               {/* <hr />
             <div className="btn-login-google">
