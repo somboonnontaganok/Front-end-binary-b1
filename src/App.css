@@ -11,3 +11,7 @@
   background: #b48c64;
   border-radius: 10px;
   }
+  /* cursor */
+  body {
+    cursor: url('./assets/img/icons8-cursor-30.png'), auto;
+  }
