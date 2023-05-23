@@ -64,7 +64,7 @@ function CreateActivity() {
         />
         <label>Date</label>
         <input
-          type="text"
+          type="date"
           placeholder="Date"
           onChange={(e) => setDate(e.target.value)}
         />
@@ -92,12 +92,22 @@ function CreateActivity() {
           placeholder="Finish Time"
           onChange={(e) => setFinishTime(e.target.value)}
         />
-        <label>Activity Type</label>
+        {/* <label>Activity Type</label>
         <input
           type="text"
+          list="types"
           placeholder="Type"
           onChange={(e) => setType(e.target.value)}
-        />
+        /> */}
+        <label for="activity-type">Activity Types</label>
+          <select id="activity-type" name="activity-type" onChange={(e) => setType(e.target.value)}>
+            <option value="" disabled selected></option>
+            <option value="hiit">HIIT</option>
+            <option value="yoga">Yoga</option>
+            <option value="strength">Strength Training</option>
+            <option value="pilates">Pilates</option>
+            <option value="weight">Weightlifting</option>
+          </select>
         <label>Distance</label>
         <input
           type="text"
