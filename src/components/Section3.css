@@ -1,0 +1,6 @@
+.carousel {
+  width: 900px;
+  /* height:550px; */
+  margin: auto;
+  object-fit: cover;
+}

@@ -74,12 +74,12 @@ function CreateActivity() {
           placeholder="Description"
           onChange={(e) => setDescription(e.target.value)}
         />
-        <label>Duration</label>
+        {/* <label>Duration</label>
         <input
           type="text"
           placeholder="Duration"
           onChange={(e) => setDuration(e.target.value)}
-        />
+        /> */}
         <label>Start Time</label>
         <input
           type="text"
@@ -106,7 +106,7 @@ function CreateActivity() {
             <option value="yoga">Yoga</option>
             <option value="strength">Strength Training</option>
             <option value="pilates">Pilates</option>
-            <option value="weight">Weightlifting</option>
+            <option value="weight">Weight Training</option>
           </select>
         <label>Distance</label>
         <input
