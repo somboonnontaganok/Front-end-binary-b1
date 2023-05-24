@@ -3,7 +3,7 @@ import hiit from '../assets/img/HIIT-card.jpg';
 import wt from '../assets/img/Weight training-card.jpg';
 import st from '../assets/img/Strangth training-card.jpg';
 import pt from '../assets/img/Pilates-card.jpg';
-import yt from '../assets/img/Yoga-card.jpg';
+import yt from '../assets/img/Yoga-card-resize.jpg';
 import Carousel from 'react-bootstrap/Carousel';
 import './Section3.css';
 
@@ -48,7 +48,7 @@ const Section3 = () => {
               </p>
             </Carousel.Caption>
           </Carousel.Item>
-          <Carousel.Item>
+          <Carousel.Item >
             <img
               className="d-block w-100"
               src={pt}

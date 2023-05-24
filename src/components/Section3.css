@@ -1,6 +1,11 @@
 .carousel {
-  width: 900px;
-  /* height:550px; */
-  margin: auto;
-  object-fit: cover;
+  width: 70%;
+  overflow: hidden;
+  padding: 0;
+  margin: 30px auto;
+  position: relative;
+  box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+  border-radius: 20px;
 }
+
+
