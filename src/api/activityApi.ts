@@ -1,6 +1,8 @@
 import axios from "axios";
 
-const SERVER = "https://back-end-binary-b1.onrender.com";
+
+// const SERVER = "https://back-end-binary-b1.onrender.com";
+const SERVER = import.meta.env.VITE_BACKEND_SERVER
 
 export const getActivities = async () => {
   // code down below

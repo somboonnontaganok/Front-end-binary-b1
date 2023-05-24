@@ -11,6 +11,7 @@ import {
 } from "react-router-dom";
 import Editactivity from './components/Editactivity'
 import Createactivity from './components/Createactivity'
+import DashBoard from './components/DashBoard'
 
 
 const router = createBrowserRouter([
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
   {
     path: '/createactivity',
     element: <Createactivity />
+  },
+  {
+    path: '/dashboard',
+    element: <DashBoard />
   }
 ])
 

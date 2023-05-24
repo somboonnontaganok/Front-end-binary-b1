@@ -24,6 +24,9 @@ const Navbar = () => {
                             <li className="nav-item">
                                 <a className="nav-link text-success" href={'/createactivity'}>Create Activity</a>
                             </li>
+                            <li className="nav-item">
+                                <a className="nav-link text-success" href={'/dashboard'}>Dash Board</a>
+                            </li>
                         </ul>
                         <ul className="d-flex" style={{listStyleType:"none"}}>
                             <li className="nav-item">
