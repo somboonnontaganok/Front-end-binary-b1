@@ -7,6 +7,7 @@ import logo from './assets/img/Nest-fit.png';
 import Section2 from '../src/components/Section2';
 import Section3 from '../src/components/Section3';
 import Section4 from '../src/components/Section4';
+import Section5 from '../src/components/Section5';
 import './App.css'
 
 const App = () => {
@@ -17,11 +18,11 @@ const App = () => {
           <div className="container">
             <div style={{display:"flex", width:"30%", position:"absolute", bottom:"63%", right:"10%"}}>
               <h1 style={{color:"white",backgroundColor:"#fac031", padding:"12px"}}>N</h1>
-              <h1 style={{color:"#fac031", padding:"12px"}}>E</h1>
+              <h1 style={{color:"#fac031", padding:"12px", border:"2px solid #fac031"}}>E</h1>
               <h1 style={{color:"white",backgroundColor:"#fac031", padding:"12px"}}>S</h1>
-              <h1 style={{color:"#fac031", padding:"12px"}}>T</h1>
+              <h1 style={{color:"#fac031", padding:"12px", border:"2px solid #fac031"}}>T</h1>
               <h1 style={{color:"white",backgroundColor:"#fac031", padding:"12px"}}>F</h1>
-              <h1 style={{color:"#fac031", padding:"12px"}}>I</h1>
+              <h1 style={{color:"#fac031", padding:"12px", border:"2px solid #fac031"}}>I</h1>
               <h1 style={{color:"white",backgroundColor:"#fac031", padding:"12px"}}>T</h1>
             </div>
             <div>
@@ -42,6 +43,7 @@ const App = () => {
             </div>
           </div>
           <Section2/>
+          <Section5/>
           <Section4/>
     </>
   )

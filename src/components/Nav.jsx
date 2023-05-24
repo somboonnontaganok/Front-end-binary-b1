@@ -27,6 +27,9 @@ const Navbar = () => {
                             <li className="nav-item">
                                 <a className="nav-link text-success" href={'/dashboard'}>Dash Board</a>
                             </li>
+                            <li className="nav-item">
+                                <a className="nav-link text-success" href={'/createprofile'}>Edit Profile</a>
+                            </li>
                         </ul>
                         <ul className="d-flex" style={{listStyleType:"none"}}>
                             <li className="nav-item">
