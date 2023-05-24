@@ -14,4 +14,7 @@
   /* cursor */
   body {
     cursor: url('./assets/img/icons8-cursor-30.png'), auto;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }

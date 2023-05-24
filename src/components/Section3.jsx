@@ -3,50 +3,80 @@ import hiit from '../assets/img/HIIT-card.jpg';
 import wt from '../assets/img/Weight training-card.jpg';
 import st from '../assets/img/Strangth training-card.jpg';
 import pt from '../assets/img/Pilates-card.jpg';
-import yt from '../assets/img/Yoga-card.jpg';
+import yt from '../assets/img/Yoga-card-resize.jpg';
+import Carousel from 'react-bootstrap/Carousel';
+import './Section3.css';
 
 const Section3 = () => {
   return (
     <>
-        <div className="3-section my-5">
-        <div id="carouselExampleInterval" className="carousel slide" data-bs-ride="carousel">
-            <div className="carousel-inner">
-              <div className="carousel-item active" data-bs-interval="1000">
-                <img src={hiit} className="d-block w-50" alt="..."/>
-                <h5>Title</h5>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam ullam, ducimus dolor fugit aliquam unde quasi molestiae vero placeat ut libero aut adipisci nihil velit maxime, tempore magni sed odit.</p>
-            </div>
-              <div className="carousel-item" data-bs-interval="2000">
-                <img src={wt} className="d-block w-50" alt="..."/>
-                <h5>Title</h5>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam ullam, ducimus dolor fugit aliquam unde quasi molestiae vero placeat ut libero aut adipisci nihil velit maxime, tempore magni sed odit.</p>
-            </div>
-              <div className="carousel-item" data-bs-interval="2000">
-                <img src={st} className="d-block w-50" alt="..."/>
-                <h5>Title</h5>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam ullam, ducimus dolor fugit aliquam unde quasi molestiae vero placeat ut libero aut adipisci nihil velit maxime, tempore magni sed odit.</p>
-            </div>
-              <div className="carousel-item" data-bs-interval="2000">
-                <img src={pt} className="d-block w-50" alt="..."/>
-                <h5>Title</h5>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam ullam, ducimus dolor fugit aliquam unde quasi molestiae vero placeat ut libero aut adipisci nihil velit maxime, tempore magni sed odit.</p>
-            </div>
-              <div className="carousel-item">
-                <img src={yt} className="d-block w-50" alt="..."/>
-                <h5>Title</h5>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam ullam, ducimus dolor fugit aliquam unde quasi molestiae vero placeat ut libero aut adipisci nihil velit maxime, tempore magni sed odit.</p>
-            </div>
-            </div>
-            <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-              <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span className="visually-hidden">Previous</span>
-            </button>
-            <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-              <span className="carousel-control-next-icon" aria-hidden="true"></span>
-              <span className="visually-hidden">Next</span>
-            </button>
-          </div>
-    </div>
+        <Carousel>
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src={hiit}
+              alt="First slide"
+            />
+            <Carousel.Caption>
+              <h3>HIIT</h3>
+              <p>High-Intensity Interval Training (HIIT) is a type of workout that alternates between intense bursts of activity and brief rest periods</p>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src={wt}
+              alt="Second slide"
+            />
+
+            <Carousel.Caption>
+              <h3>Strength Training</h3>
+              <p>Strength training is a type of exercise that focuses on building muscular strength and endurance, improving bone density, and boosting metabolism</p>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src={st}
+              alt="Third slide"
+            />
+
+            <Carousel.Caption>
+              <h3>Weight Training</h3>
+              <p>
+              Weight training involves using resistance to build strength, increase muscle mass, and improve overall fitness
+              </p>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item >
+            <img
+              className="d-block w-100"
+              src={pt}
+              alt="Fourth slide"
+            />
+
+            <Carousel.Caption>
+              <h3>Pilates</h3>
+              <p>
+              Pilates is a low-impact form of exercise that focuses on strengthening and lengthening your muscles, improving flexibility, and enhancing your mind-body connection
+              </p>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src={yt}
+              alt="Fifth slide"
+            />
+
+            <Carousel.Caption>
+              <h3>Yoga</h3>
+              <p>
+              Yoga is a mind-body practice that combines physical postures, breathing techniques, and meditation to help you reduce stress, improve flexibility, and build strength
+              </p>
+            </Carousel.Caption>
+          </Carousel.Item>
+        </Carousel>
     </>
   )
 }

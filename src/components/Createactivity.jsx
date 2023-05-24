@@ -74,54 +74,70 @@ function CreateActivity() {
 
   return (
     <>
-      <Layout/>
-      <div className="create-activity">
-        <h3 style={{color:"#fac031"}}>Create <span style={{color:"white", backgroundColor:"#fac031"}}>Activity</span></h3>
-        <div className="create-form">
-          <label>Name</label>
-          <input
-            type="text"
-            placeholder="Name"
-            onChange={(e) => setName(e.target.value)}
-          />
-          <label>Date</label>
-          <input
-            type="text"
-            placeholder="Date"
-            onChange={(e) => setDate(e.target.value)}
-          />
-          <label>Description</label>
-          <input
-            type="text"
-            placeholder="Description"
-            onChange={(e) => setDescription(e.target.value)}
-          />
-          <label>Start Time</label>
-          <input
-            type="text"
-            placeholder="Start Time"
-            onChange={(e) => setStartTime(e.target.value)}
-          />
-          <label>Finish Time</label>
-          <input
-            type="text"
-            placeholder="Finish Time"
-            onChange={(e) => setFinishTime(e.target.value)}
-          />
-          <label>Activity Type</label>
-          <input
-            type="text"
-            placeholder="Type"
-            onChange={(e) => setType(e.target.value)}
-          />
-          <label>Distance</label>
-          <input
-            type="text"
-            placeholder="Distance"
-            onChange={(e) => setDistance(e.target.value)}
-          />
-        </div>
-        <div className="create-btn">
+    <Layout/>
+    <div className="create-activity">
+    <h3 style={{color:"#fac031"}}>Create <span style={{color:"white", backgroundColor:"#fac031"}}>Activity</span></h3>
+    <div className="create-form">
+        <label>Name</label>
+        <input
+          type="text"
+          placeholder="Name"
+          onChange={(e) => setName(e.target.value)}
+        />
+        <label>Date</label>
+        <input
+          type="date"
+          placeholder="Date"
+          onChange={(e) => setDate(e.target.value)}
+        />
+        <label>Description</label>
+        <input
+          type="text"
+          placeholder="Description"
+          onChange={(e) => setDescription(e.target.value)}
+        />
+        {/* <label>Duration</label>
+        <input
+          type="text"
+          placeholder="Duration"
+          onChange={(e) => setDuration(e.target.value)}
+        /> */}
+        <label>Start Time</label>
+        <input
+          type="text"
+          placeholder="Start Time"
+          onChange={(e) => setStartTime(e.target.value)}
+        />
+        <label>Finish Time</label>
+        <input
+          type="text"
+          placeholder="Finish Time"
+          onChange={(e) => setFinishTime(e.target.value)}
+        />
+        {/* <label>Activity Type</label>
+        <input
+          type="text"
+          list="types"
+          placeholder="Type"
+          onChange={(e) => setType(e.target.value)}
+        /> */}
+        <label for="activity-type">Activity Types</label>
+          <select id="activity-type" name="activity-type" onChange={(e) => setType(e.target.value)}>
+            <option value="" disabled selected></option>
+            <option value="hiit">HIIT</option>
+            <option value="yoga">Yoga</option>
+            <option value="strength">Strength Training</option>
+            <option value="pilates">Pilates</option>
+            <option value="weight">Weight Training</option>
+          </select>
+        <label>Distance</label>
+        <input
+          type="text"
+          placeholder="Distance"
+          onChange={(e) => setDistance(e.target.value)}
+        />
+      </div>
+      <div className="create-btn">
           <button className="create-save-btn" onClick={save}>Save</button>
           <button>Cancel</button>
         </div>

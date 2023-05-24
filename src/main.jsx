@@ -12,6 +12,7 @@ import {
 import Editactivity from './components/Editactivity'
 import Createactivity from './components/Createactivity'
 import DashBoard from './components/DashBoard'
+import Createprofile from './components/Createprofile';
 
 
 const router = createBrowserRouter([
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
   {
     path: '/dashboard',
     element: <DashBoard />
+  },
+  {
+    path: '/createprofile',
+    element: <Createprofile />
   }
 ])
 
