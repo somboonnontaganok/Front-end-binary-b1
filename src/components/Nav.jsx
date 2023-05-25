@@ -13,22 +13,7 @@ const Navbar = () => {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <a className="nav-link active text-dark" aria-current="page" href="#">Programs</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link text-warning" href="#">Feature</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link text-success" href={'/editactivity'}>Edit Activity</a>
-                            </li>
-                            <li className="nav-item">
                                 <a className="nav-link text-success" href={'/createactivity'}>Create Activity</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link text-success" href={'/dashboard'}>Dash Board</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link text-success" href={'/createprofile'}>Edit Profile</a>
                             </li>
                         </ul>
                         <ul className="d-flex" style={{listStyleType:"none"}}>
