@@ -16,7 +16,7 @@ const App = () => {
     <>
       <Layout />
           <div className="container">
-            <div style={{display:"flex", width:"30%", position:"absolute", bottom:"63%", right:"10%"}}>
+            <div style={{display:"flex", width:"30%", position:"absolute", bottom:"60%", right:"10%"}}>
               <h1 style={{color:"white",backgroundColor:"#fac031", padding:"12px"}}>N</h1>
               <h1 style={{color:"#fac031", padding:"12px", border:"2px solid #fac031"}}>E</h1>
               <h1 style={{color:"white",backgroundColor:"#fac031", padding:"12px"}}>S</h1>
@@ -28,12 +28,12 @@ const App = () => {
             <div>
               <img src={headPhone} style={{position:"absolute", right:"0", bottom:"0", width:"380px"}}></img>
               {/* <img src={acc} style={{position:"absolute", right:"35%", bottom:"58%", width:"270px"}}></img> */}
-              <img src={logo} style={{position:"absolute", right:"19%", bottom:"48%", width:"80px"}}></img>
+              <img src={logo} style={{position:"absolute", right:"19%", bottom:"50%", width:"80px"}}></img>
             </div>
             <div className="row flex-lg-row-reverse align-items-center g-5">
               <div className="col-10 col-sm-8 col-lg-6" style={{border:"2px solid #fac031", boxShadow:"10px 10px #fac031", borderRadius:"20px"}}>
                   <div className="d-flex align-items-end justify-content-between">
-                      <h1 className="display-5 fw-bold lh-1 mb-3" style={{padding:"70px 0 40px 0"}}>What’s <span className="text-warning">Nest</span>Fit</h1>
+                      <h1 className="display-5 fw-bold lh-1 mb-3" style={{padding:"30px 0 30px 0"}}>What’s <span className="text-warning">Nest</span>Fit</h1>
                   </div>                  
                   <p className="lead">Welcome to NestFit - where fitness is fun! With our all-in-one features, state-of-the-art workouts, and a supportive community, achieving your fitness goals has never been more enjoyable. Let's unleash your potential together and start your fitness journey with NestFit today!</p>
                   </div>
