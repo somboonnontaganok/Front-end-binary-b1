@@ -20,6 +20,8 @@ function DashBoard() {
   const [distance, setDistance] = useState();
   const [load, toggleReload] = useState(false);
   const [inputActive, setInputActive] = useState(false);
+  const [editedActivity, setEditedActivity] = useState({});
+  const [editedActivityId, setEditedActivityId] = useState(null);
 
   useEffect(() => {
     const getActivitieses = async () => {
@@ -30,20 +32,9 @@ function DashBoard() {
     getActivitieses();
   }, [load]);
 
-  const save = async () => {
-    const newActivity = {
-      activity_name,
-      activity_date,
-      description,
-      duration,
-      activity_start_time,
-      activity_finish_time,
-      activity_type,
-      distance,
-    };
-    await createActivities(newActivity);
-    toggleReload(!load);
-  };
+  const getAct = () => {
+    
+  }
 
   const confirmDelete = async (id) => {
     let text = "Press a button!\nEither OK or Cancel.";
@@ -55,63 +46,284 @@ function DashBoard() {
     }
   };
 
+  const calculateDuration = (startTime, finishTime) => {
+    const start = new Date(`1970-01-01T${startTime}`);
+    const finish = new Date(`1970-01-01T${finishTime}`);
+    const duration = finish - start;
+
+    // Convert duration to hours and minutes
+    const hours = Math.floor(duration / 3600000);
+    const minutes = Math.floor((duration % 3600000) / 60000);
+
+    return `${hours} hours ${minutes} minutes`;
+  };
+  
   return (
     <>
       <Layout />
       <div>DashBoard</div>
-      <div class="album py-5 bg-light">
-        <div class="container">
-          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-            <div class="col">
-              <div class="card shadow-sm">
-                <svg
-                  class="bd-placeholder-img card-img-top"
-                  width="100%"
-                  height="225"
-                  xmlns="http://www.w3.org/2000/svg"
-                  role="img"
-                  aria-label="Placeholder: Thumbnail"
-                  preserveAspectRatio="xMidYMid slice"
-                  focusable="false"
-                >
-                  <title>Placeholder</title>
-                  <rect width="100%" height="100%" fill="#55595c"></rect>
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">
-                    Thumbnail
-                  </text>
-                </svg>
+      {/* <div className="create-activity">
+        <h3 style={{ color: "#fac031" }}>
+          Create{" "}
+          <span style={{ color: "white", backgroundColor: "#fac031" }}>
+            Activity
+          </span>
+        </h3>
+        <div className="create-form">
+          <label>Name</label>
+          <input
+            type="text"
+            placeholder="Name"
+            onChange={(e) => setName(e.target.value)}
+          />
+          <label>Date</label>
+          <input
+            type="date"
+            placeholder="Date"
+            onChange={(e) => setDate(e.target.value)}
+          />
+          <label>Start Time</label>
+          <input
+            type="time"
+            placeholder="Start Time"
+            onChange={(e) => setStartTime(e.target.value)}
+          />
+          <label>Description</label>
+          <input
+            type="text"
+            placeholder="Description"
+            onChange={(e) => setDescription(e.target.value)}
+          />
 
-                <div class="card-body">
-                  <p class="card-text">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
-                  </p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button
-                        type="button"
-                        class="btn btn-sm btn-outline-secondary"
-                      >
-                        View
+          <label>Finish Time</label>
+          <input
+            type="time"
+            placeholder="Finish Time"
+            onChange={(e) => setFinishTime(e.target.value)}
+          />
+          <label>Duration</label>
+          <input
+            type="text"
+            placeholder="Duration"
+            value={calculateDuration(activity_start_time, activity_finish_time)}
+            disabled={true}
+          />
+          <label>Activity Type</label>
+          <select onChange={(e) => setType(e.target.value)}>
+            <option value="">Select Activity Type</option>
+            <option value="yoga">Yoga</option>
+            <option value="hiit">HIIT</option>
+            <option value="weight">Weight Training</option>
+            <option value="strength">Strength Training</option>
+            <option value="pilates">Pilates</option>
+            enum: ["hiit", "strength", "yoga", "pilates", "weight"],
+            Add more options as needed
+          </select>
+          <input
+            type="text"
+            placeholder="Type"
+            onChange={(e) => setType(e.target.value)}
+          />
+          <label>Distance</label>
+          <input
+            type="text"
+            placeholder="Distance"
+            onChange={(e) => setDistance(e.target.value)}
+          />
+        </div>
+        <div className="create-btn">
+          <button className="create-save-btn" onClick={save}>
+            Save
+          </button>
+          <button>Cancel</button>
+        </div>
+      </div> */}
+      <h3>Render</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Date</th>
+            <th>Description</th>
+            <th>Start_Time</th>
+            <th>Finish_Time</th>
+            <th>Duartion</th>
+            <th>Type</th>
+            <th>Distance</th>
+          </tr>
+        </thead>
+        <tbody>
+          {activities.map((activity) => {
+            return (
+              <tr key={activity._id}>
+                <td>
+                  <input
+                    value={
+                      inputActive && editedActivityId === activity._id
+                        ? editedActivity.activity_name
+                        : activity.activity_name
+                    }
+                    disabled={!inputActive}
+                    className={`${inputActive ? "inputTrue" : "inputFalse"}`}
+                    onChange={(e) =>
+                      setEditedActivity({
+                        ...editedActivity,
+                        activity_name: e.target.value,
+                      })
+                    }
+                  />
+                </td>
+                <td>
+                  <input
+                    value={
+                      inputActive && editedActivityId === activity._id
+                        ? editedActivity.activity_date
+                        : activity.activity_date
+                    }
+                    disabled={!inputActive}
+                    className={`${inputActive ? "inputTrue" : "inputFalse"}`}
+                    onChange={(e) =>
+                      setEditedActivity({
+                        ...editedActivity,
+                        activity_date: e.target.value,
+                      })
+                    }
+                  />
+                </td>
+                <td>
+                  <input
+                    value={
+                      inputActive && editedActivityId === activity._id
+                        ? editedActivity.description
+                        : activity.description
+                    }
+                    disabled={!inputActive}
+                    className={`${inputActive ? "inputTrue" : "inputFalse"}`}
+                    onChange={(e) =>
+                      setEditedActivity({
+                        ...editedActivity,
+                        description: e.target.value,
+                      })
+                    }
+                  />
+                </td>
+                <td>
+                  <input
+                    value={
+                      inputActive && editedActivityId === activity._id
+                        ? editedActivity.activity_start_time
+                        : activity.activity_start_time
+                    }
+                    disabled={!inputActive}
+                    className={`${inputActive ? "inputTrue" : "inputFalse"}`}
+                    onChange={(e) =>
+                      setEditedActivity({
+                        ...editedActivity,
+                        activity_start_time: e.target.value,
+                      })
+                    }
+                  />
+                </td>
+                <td>
+                  <input
+                    value={
+                      inputActive && editedActivityId === activity._id
+                        ? editedActivity.activity_finish_time
+                        : activity.activity_finish_time
+                    }
+                    disabled={!inputActive}
+                    className={`${inputActive ? "inputTrue" : "inputFalse"}`}
+                    onChange={(e) =>
+                      setEditedActivity({
+                        ...editedActivity,
+                        activity_finish_time: e.target.value,
+                      })
+                    }
+                  />
+                </td>
+                <td>
+                  <input
+                    value={
+                      inputActive && editedActivityId === activity._id
+                        ? calculateDuration(
+                            editedActivity.activity_start_time,
+                            editedActivity.activity_finish_time
+                          )
+                        : calculateDuration(
+                            activity.activity_start_time,
+                            activity.activity_finish_time
+                          )
+                    }
+                    disabled={!inputActive}
+                    className={`${inputActive ? "inputTrue" : "inputFalse"}`}
+                  />
+                </td>
+                <td>
+                  <input
+                    value={
+                      inputActive && editedActivityId === activity._id
+                        ? editedActivity.activity_type
+                        : activity.activity_type
+                    }
+                    disabled={!inputActive}
+                    className={`${inputActive ? "inputTrue" : "inputFalse"}`}
+                    onChange={(e) =>
+                      setEditedActivity({
+                        ...editedActivity,
+                        activity_type: e.target.value,
+                      })
+                    }
+                  />
+                </td>
+                <td>
+                  <input
+                    value={
+                      inputActive && editedActivityId === activity._id
+                        ? editedActivity.distance
+                        : activity.distance
+                    }
+                    disabled={!inputActive}
+                    className={`${inputActive ? "inputTrue" : "inputFalse"}`}
+                    onChange={(e) =>
+                      setEditedActivity({
+                        ...editedActivity,
+                        distance: e.target.value,
+                      })
+                    }
+                  />
+                </td>
+                {inputActive ? (
+                  <>
+                    <td>
+                      <button onClick={() => updateActivity(activity._id)}>
+                        Save
                       </button>
-                      <button
-                        type="button"
-                        class="btn btn-sm btn-outline-secondary"
-                      >
+                    </td>
+                    <td>
+                      <button onClick={() => setInputActive(false)}>
+                        Cancel
+                      </button>
+                    </td>
+                  </>
+                ) : (
+                  <>
+                    <td>
+                      <button onClick={() => editActivity(activity)}>
                         Edit
                       </button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            
-          </div>
-        </div>
-      </div>
+                    </td>
+                    <td>
+                      <button onClick={() => confirmDelete(activity._id)}>
+                        Delete
+                      </button>
+                    </td>
+                  </>
+                )}
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
     </>
   );
 }
