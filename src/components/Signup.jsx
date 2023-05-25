@@ -82,7 +82,7 @@ const Signup = () => {
                   Birth date
                 </label>
                 <input
-                  type="email"
+                  type="date"
                   class="form-control"
                   // id="exampleInputEmail1"
                   aria-describedby="emailHelp"
