@@ -2,12 +2,17 @@ import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import "./Signup.css";
 import Navbar from "./Nav";
-
+import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
   const [email,setEmail] = useState('')
   const [password,setPassword] = useState('')
   const [firstname,setFirstname] = useState('')
+  const navigate = useNavigate();
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    navigate("/createactivity")
+  }
   return (
     <>
     <Navbar />
@@ -17,7 +22,7 @@ const Signup = () => {
           {/* form */}
           <div class="h-75 d-inline-block border border-light p-3 bg-light bg-opacity-50">
             <h1>Welcome to, NestFit</h1>
-            <form className="mx-5">
+            <form className="mx-5" onSubmit={handleSubmit}>
               <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">
                   Email address
