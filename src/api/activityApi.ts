@@ -14,13 +14,15 @@ export const getActivities = async () => {
 export const createActivities = async (body) => {
   // code down below
   const response = await axios.post(`${SERVER}/activities`, body);
-  alert(response.data);
+  // alert(response.data);
+  alert('Create activity already');
 };
 
 export const deleteActivities = async (activityId) => {
   // code down below
   const response = await axios.delete(`${SERVER}/activities/${activityId}`);
-  alert(response.data);
+  // alert(response.data);
+  alert('Delete activity already');
 };
 
 export const getActivityById = (activityId) => axios.get(`/activity/${activityId}`);

@@ -169,7 +169,7 @@ function CreateActivity() {
         </div>
       </div>
 
-      <h3>Render</h3>
+      <h3>My Activity</h3>
       <table>
         <thead>
           <tr>
