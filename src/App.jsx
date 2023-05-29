@@ -17,13 +17,13 @@ const App = () => {
     <>
       <Layout />
           <div className="container">
-            <div style={{display:"flex", width:"30%", position:"absolute", bottom:"62%", right:"19%"}}>
+            <div style={{display:"flex", width:"30%", position:"absolute", bottom:"62%", right:"25%"}}>
               <p style={{fontWeight:"bold", fontSize:"25px",color:"white", backgroundColor:"#fac031", padding:"10px 20px", borderRadius:"10px"}}>Welcome to,</p>
             </div>
             <div>
-              <img src={headPhone} style={{position:"absolute", right:"0", bottom:"0", width:"380px"}}></img>
+              <img src={headPhone} style={{position:"absolute", right:"0", bottom:"-40%", width:"380px"}}></img>
               {/* <img src={acc} style={{position:"absolute", right:"35%", bottom:"58%", width:"270px"}}></img> */}
-              <img src={logo} style={{position:"absolute", right:"21%", bottom:"47%", width:"130px"}}></img>
+              <img src={logo} style={{position:"absolute", right:"-21%", bottom:"47%", width:"130px"}}></img>
               <img src={smallcircle} style={{position:"absolute", right:"5%", bottom:"75%", width:"100px"}}></img>
               <img src={smallcircle} style={{position:"absolute", right:"5%", bottom:"65%", width:"200px"}}></img>
             </div>
